@@ -1,0 +1,2 @@
+# NCMOUSEMOVE-
+Mouse moved in the control or user did Ctrl + V                 Case $WM_MOUSEMOVE, $WM_PASTE                     If ($hWnd = $hEdtEdit And $bInserted = False) Then                         $bInserted = True                         Local $pData = DllStructCreate("struct;char func[64];int iControl;endstruct", $dwRefData)                         Return Call($pData.func, $pData.iControl)                     EndIf                  Case $WM_NCMOUSEMOVE                     $bInserted = False             EndSwitch     EndSwitch
